@@ -1,14 +1,12 @@
 Vagrant.configure("2") do |config|
-  # Use Ubuntu 22.04 LTS (Jammy Jellyfish)
   config.vm.box = "ubuntu/jammy64"
+  config.vm.network "public_network", bridge: "wlo1"
   
-  # Configure VM resources - keeping it light
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
     vb.cpus = 1
   end
   
-  # Provision the VM with Docker and git
   config.vm.provision "shell", inline: <<-SHELL
     # Update package lists
     apt-get update
