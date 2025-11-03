@@ -85,4 +85,4 @@ pipeline {
 
 ---
 
-This setup gives you a scalable, secure, and maintainable CI/CD pipeline. Want help provisioning a build agent or writing your Jenkinsfile? I can guide you through it.
+This setup gives you a scalable, secure, and maintainable CI/CD pipeline.
