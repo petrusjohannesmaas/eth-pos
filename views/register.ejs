@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 </head>
+
 <body>
     <h1>Register</h1>
+    <ul>
+        <% if(typeof errors != 'undefined') { %> <% errors.forEach(error=>{ %>
+        <li><%= error.message %></li>
+        <% }) %> <% } %>
+    </ul>
+
     <form action="/users/Register" method="POST">
         <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="johndoe69" required>
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="name" placeholder="johndoe69" required>
         </div>
         <div>
             <label for="email">Email:</label>
@@ -31,4 +39,5 @@
         <a href="/users/login">Already registered? Login here</a>
     </form>
 </body>
+
 </html>
