@@ -17,18 +17,25 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(() => {
-        const storedUser = localStorage.getItem('pos_user');
-        return storedUser ? JSON.parse(storedUser) : null;
+        if (typeof window !== 'undefined') {
+            const storedUser = localStorage.getItem('pos_user');
+            return storedUser ? JSON.parse(storedUser) : null;
+        }
+        return null;
     });
 
     const login = (userData: User) => {
         setUser(userData);
-        localStorage.setItem('pos_user', JSON.stringify(userData));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('pos_user', JSON.stringify(userData));
+        }
     };
 
     const logout = () => {
         setUser(null);
-        localStorage.removeItem('pos_user');
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem('pos_user');
+        }
     };
 
     // Auto-lock feature: logout after 10 minutes of inactivity
