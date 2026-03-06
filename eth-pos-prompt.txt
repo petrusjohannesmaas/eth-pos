@@ -1,0 +1,217 @@
+You are a **senior full-stack engineer**. Build a **minimal PoS MVP** using the **MERN stack** that simulates a **cash checkout flow** and stores transactions in **MongoDB**.
+
+Focus on **clarity, simplicity, and minimal dependencies**.
+
+---
+
+## Project Context
+
+A frontend project already exists in `/frontend` using:
+
+* Vite
+* React
+* React Router v7
+* Tailwind CSS
+
+There is also a reference file:
+
+```
+cash-pos-schema.md
+```
+
+You may use or ignore it if a cleaner design is possible.
+
+---
+
+## Core Features
+
+The PoS must allow a cashier to:
+
+1. Unlock using a **numeric access code**
+2. **Scan or enter barcodes**
+3. Add products to a **cart**
+4. Complete a **cash checkout**
+5. Save a **receipt-style transaction** in MongoDB
+
+---
+
+## Backend
+
+Use:
+
+* Node.js
+* Express
+* MongoDB
+* Mongoose
+
+Structure:
+
+```
+server/
+  controllers/
+  models/
+  routes/
+  services/
+  app.js
+```
+
+### Models
+
+**Product**
+
+```
+name
+barcode (unique)
+price
+createdAt
+```
+
+**User**
+
+```
+name
+accessCode
+role ("cashier" | "admin")
+createdAt
+```
+
+**Transaction**
+
+```
+items [{ productId, name, price, quantity }]
+subtotal
+total
+cashReceived
+change
+cashierId
+cashierName
+createdAt
+```
+
+### API
+
+Products
+
+```
+GET /products
+POST /products
+GET /products/barcode/:barcode
+```
+
+Users
+
+```
+GET /users
+POST /users
+POST /auth/access-code
+```
+
+Transactions
+
+```
+POST /transactions
+GET /transactions
+```
+
+Seed **3 users** if the DB is empty:
+
+```
+Alice 1111
+Bob 2222
+Eve 3333
+```
+
+---
+
+## Frontend
+
+Structure:
+
+```
+app/
+  pages/
+  components/
+  services/
+  routes/
+```
+
+### Screens
+
+**1. Access Code Screen**
+
+* Enter code
+* Unlock PoS
+
+**2. PoS Screen**
+
+* Barcode input → fetch product → add to cart
+* Show cart items, subtotal, total
+
+**3. Cash Checkout**
+
+* Enter cash received
+* Calculate change
+* Send transaction → clear cart → show receipt confirmation
+
+**4. Admin Panel (admin only)**
+
+Create:
+
+* Products (name, barcode, price)
+* Users (name, accessCode, role)
+
+---
+
+## Behavior
+
+If no products exist:
+
+```
+No products yet
+```
+
+PoS must **auto-lock after inactivity** and allow **manual lock**.
+
+---
+
+## Docker
+
+Project must run with **Docker Compose**:
+
+```
+frontend
+backend
+mongodb
+```
+
+Running:
+
+```
+docker compose up
+```
+
+should start the entire system.
+
+---
+
+## Output
+
+Provide:
+
+* Backend code
+* Frontend code
+* MongoDB models
+* API routes
+* Dockerfiles
+* docker-compose.yml
+* Run instructions
+
+The system should allow:
+
+1. Start containers
+2. Create products
+3. Unlock PoS
+4. Perform checkout
+5. Store transactions in MongoDB.
+
+---

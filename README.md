@@ -4,7 +4,7 @@
 A self-hostable PoS that can run either as a Trad-fi or Defi commerce solution using Docker Compose.
 
 ## Current Progress
-Currently, the project implements a **cash-based Point of Sale (POS)** system using the **MERN stack** for GUI (MongoDB, Express, React, Node.js) with **n8n workflows** for database operations and automation.  
+Currently, the project implements a **cash-based Point of Sale (POS)** system using the **MERN stack** for GUI (MongoDB, Express, React, Node.js) with **n8n workflows** for notifications + reporting automations.  
 The schema design is documented in [`cash-pos-schema.md`](./cash-pos-schema.md).
 
 ---
@@ -58,8 +58,8 @@ See [`cash-pos-schema.md`](./cash-pos-schema.md) for full details.
 ---
 
 ## 📌 Core Operations (via n8n)
-- Lookup product by barcode  
-- Create sale and reduce inventory  
+- Handle notifications
+- Handle receipts
 - Open/close cash sessions  
 - Generate daily sales reports  
 
@@ -68,8 +68,7 @@ See [`cash-pos-schema.md`](./cash-pos-schema.md) for full details.
 ## 🔮 Future Extensions
 - Blockchain payments integration  
 - Card payments and refunds  
-- Customer profiles and loyalty  
-- Multi-store support  
+- Customer profiles and loyalty   
 - Advanced reporting and analytics  
 
 ---

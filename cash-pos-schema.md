@@ -11,7 +11,7 @@ System characteristics:
 * Receipt-based transactions
 * Daily cash sessions
 
-The system will be integrated into a **MERN stack application**, while **database queries are executed via n8n workflows**.
+The system will be integrated into a **MERN stack application**, and extra notifications + reporting is executed via n8n workflows.
 
 The database design prioritizes:
 
@@ -449,39 +449,5 @@ This can be generated using:
 * a workflow in n8n
 
 ---
-
-# Recommended API Structure (MERN)
-
-The frontend should call backend endpoints that trigger **n8n workflows**.
-
-Example endpoints:
-
-```
-GET /products
-GET /products/barcode/:barcode
-
-POST /sales
-
-POST /sessions/open
-POST /sessions/close
-```
-
----
-
-# Future Extensions
-
-This schema can be extended later to support:
-
-```
-card payments
-refunds
-customers
-inventory adjustments
-suppliers
-purchase orders
-multi-store POS
-tax rules
-discounts
-```
 
 ---
