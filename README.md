@@ -43,12 +43,12 @@ See [`cash-pos-schema.md`](./cash-pos-schema.md) for full details.
 ## 🚀 Getting Started
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/cash-pos.git
-   cd cash-pos
+   git clone https://github.com/petrusjohannesmaas/eth-pos.git
+   cd eth-pos
    ```
 2. Run with Docker Compose:
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
    - Frontend: http://localhost:3000  
    - Backend API: http://localhost:5000  
@@ -73,7 +73,3 @@ See [`cash-pos-schema.md`](./cash-pos-schema.md) for full details.
 - Advanced reporting and analytics  
 
 ---
-
-This way your repo looks **clean, modern, and forward-looking**: it highlights MERN + n8n, references the schema file, and clearly states blockchain integration as the next milestone.  
-
-Would you like me to also **add a sample diagram (in text form)** showing how the frontend, backend, MongoDB, and n8n interact, so the README visually explains the flow?
