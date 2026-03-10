@@ -19,7 +19,7 @@ export default function Navbar() {
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex items-center space-x-4 text-white">
                     <ShoppingCart className="w-6 h-6 text-blue-500" />
-                    <span className="font-bold text-xl tracking-wide">MERN PoS</span>
+                    <span className="font-bold text-xl tracking-wide">ETH PoS</span>
                     <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
                         {user.role}
                     </span>
@@ -45,7 +45,7 @@ export default function Navbar() {
                             title="POS"
                         >
                             <ShoppingCart className="w-5 h-5" />
-                            <span className="hidden sm:inline">POS</span>
+                            <span className="hidden sm:inline"></span>
                         </button>
                         <button
                             onClick={handleLogout}
